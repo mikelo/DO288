@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exoapp-exochart
+spec:
+  replicas: 5
+  resources:
+    limits:
+      memory: 128Mi
+      cpu: 250m
