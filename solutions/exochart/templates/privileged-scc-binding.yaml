@@ -1,11 +1,11 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: exoapp-cockroachdb-privileged-scc
+  name: {{ .Release.Name }}-cockroachdb-privileged-scc
   namespace: {{ .Release.Namespace }}
 subjects:
   - kind: ServiceAccount
-    name: exoapp-cockroachdb
+    name: {{ .Release.Name }}-cockroachdb
     namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
